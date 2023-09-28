@@ -6,32 +6,61 @@
     <title>Jolandiny Vesmírné Osudy</title>
     <!-- Include Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+
     <style>
         body {
-
             overflow: hidden;
-            background: url('./obrazky/JolandinDomecek.png');
-            background-size: cover; /* Adjust as needed */
-            background-position: center center; /* Adjust as needed */
-            background-repeat: no-repeat; /* Adjust as needed */
+            text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 255, 255), 0 0 5px darkblue;
+        }
+
+        h1 {
+            -webkit-text-stroke: 1px black; /* Webkit-based browsers */
         }
     </style>
 </head>
-<body class="backdrop-blur-3xl">
-    <div class="flex flex-col items-center">
+<body class="bg-black">
+    <div class="relative min-h-screen">
+        <!-- Background image with blur effect -->
+        <img id="Pozadi" src="./obrazky/JolandinaZahrada.png" alt="Background Image" class="absolute inset-0 w-full h-full object-cover filter blur-md" />
 
-    <h1 id="Moudro" class="p-6 text-5xl text-yellow-400 font-extrabold"></h1>
-</div>
-<div class="flex flex-col items-center">
-    <img class="w-96" src="./obrazky/JolandaPixelová.png"/>
-    <div data-tilt data-tilt-scale="1.1" style="transform-style: preserve-3d; transform: perspective(1000px);">
-         <h3 style=" transform: translateZ(20px)">Ahoj lidi</h3>
-        <img class="pt-10 w-60" src="./obrazky/Karta1.png"/>
+        <!-- Content -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-white text-center">
+                <h1 id="Moudro" style="text-shadow: 5px 5px pink;" class="p-6 text-5xl text-white font-extrabold"></h1>
+                <div class="flex flex-col items-center">
+                <img class="w-96" src="./obrazky/JolandaPixelová.png"/>
+
+                <div class="flex justify-center">
+                    <!-- Karticka Zivota -->
+                    <a href="#" id="zivot">
+                        <div data-tilt data-tilt-scale="1.1" data-tilt-reverse="true" style="transform-style: preserve-3d; transform: perspective(1000px);" class="flex items-center justify-center relative h-full mr-4">
+                            <h3 id="Predpoved1" class="p-2 text-xl absolute font-bold" style="transform: translateZ(20px);"></h3>
+                            <!--R.I.P. Outlajna 28. Září 2023 - Bude navzdy v nasich srdcich <3. posledny fotografie outlajny zevnitr: "outline-black outline-dashed"-->
+                            <img class="my-10 w-60" src="./obrazky/Karta2.png" />
+                        </div>
+                    </a>
+        
+                    <!-- Karticka Lasky -->
+                    <a href="#" id="laska">
+                        <div data-tilt data-tilt-scale="1.1" data-tilt-reverse="true" style="transform-style: preserve-3d; transform: perspective(1000px);" class="flex items-center justify-center relative h-full mr-4">
+                            <h3 id="Predpoved2" class="p-2 text-xl absolute font-bold" style="transform: translateZ(20px);"></h3>
+                            <!--R.I.P. Outlajna 28. Září 2023 - Bude navzdy v nasich srdcich <3. posledny fotografie outlajny zevnitr: "outline-black outline-dashed"-->
+                            <img class="my-10 w-60" src="./obrazky/Karta2.png" />
+                        </div>
+                    </a>
+
+                    <!-- Karticka Poslani -->
+                    <a href="#" id="poslani">
+                        <div data-tilt data-tilt-scale="1.1" data-tilt-reverse="true" style="transform-style: preserve-3d; transform: perspective(1000px);" class="flex items-center justify-center relative h-full">
+                            <h3 id="Predpoved3" class="p-2 text-xl absolute font-bold" style="transform: translateZ(20px);"></h3>
+                            <!--R.I.P. Outlajna 28. Září 2023 - Bude navzdy v nasich srdcich <3. posledny fotografie outlajny zevnitr: "outline-black outline-dashed"-->
+                            <img class="my-10 w-60" src="./obrazky/Karta2.png" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
-
 </body>
 <script src="./script.js"></script>
 <script src="./vanilla-tilt.js"></script>
