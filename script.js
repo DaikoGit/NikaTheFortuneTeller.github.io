@@ -75,7 +75,7 @@ function appendOnce(karticka, predpoved) {
         const PredpovedJakNoha = Math.floor(Math.random() * Poslani.length);
         newElement.textContent = Poslani[PredpovedJakNoha];
         if (Poslani[PredpovedJakNoha] == "Staň se veganem, Dubínku!") {
-            document.getElementById("Vesta").src = "./obrazky/Vesticky/polish-cow.png";
+            document.getElementById("Vesta").src = "./obrazky/Vesticky/polish-cow.webp";
         }
     }
 
@@ -122,15 +122,15 @@ document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha];
 
 // Array of image file names (assuming they are in the ./obrazky/Pozadi/ directory)
 const imageFiles = [
-    "JolandinaMetropol.png",
-    "JolandinaPlaz.png",
-    "JolandinaZahrada.png",
-    "JolandinDomecek.png",
-    "JolandinoMesto.png",
-    "JolandinZamek.png",
-    "JolandinaVesnice.png",
-    "ZapadSlunicka1.png",
-    "ZapadSlunicka2.png"
+    "JolandinaMetropol.webp",
+    "JolandinaPlaz.webp",
+    "JolandinaZahrada.webp",
+    "JolandinDomecek.webp",
+    "JolandinoMesto.webp",
+    "JolandinZamek.webp",
+    "JolandinaVesnice.webp",
+    "ZapadSlunicka1.webp",
+    "ZapadSlunicka2.webp"
     // Add more image file names here
 ];
 
@@ -177,7 +177,7 @@ const Karta1 = document.getElementById("Karta1");
 const Karta2 = document.getElementById("Karta2");
 const Karta3 = document.getElementById("Karta3");
 
-Karta1.src = `./obrazky/Karticky/Karta${uniqueNumbers[0]}.png`;
-Karta2.src = `./obrazky/Karticky/Karta${uniqueNumbers[1]}.png`;
-Karta3.src = `./obrazky/Karticky/Karta${uniqueNumbers[2]}.png`;
+Karta1.src = `./obrazky/Karticky/Karta${uniqueNumbers[0]}.webp`;
+Karta2.src = `./obrazky/Karticky/Karta${uniqueNumbers[1]}.webp`;
+Karta3.src = `./obrazky/Karticky/Karta${uniqueNumbers[2]}.webp`;
 
