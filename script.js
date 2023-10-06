@@ -87,12 +87,7 @@ function appendOnce(karticka, predpoved) {
         newElement.textContent = Poslani[PredpovedJakNoha];
         if (Poslani[PredpovedJakNoha] == "Staň se veganem, Dubínku!") {
             document.getElementById("Vesta").src = "./obrazky/Vesticky/polish-cow.webp";
-            var textNodes = document.createTreeWalker(
-                document.body,
-                NodeFilter.SHOW_TEXT,
-                null,
-                false
-            );
+            
             var titleElement = document.getElementById("Moudro");
             titleElement.textContent = "Staň se veganem, Dubínku!";
 
