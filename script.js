@@ -4,16 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     container.classList.add("fade-in");
 });
 
-const MoudroJakNoha = Math.floor(Math.random() * JolandinyMoudra.length);
-document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha].Text;
-
-var audio = new Audio(`./jolandinypovidy/${JolandinyMoudra[MoudroJakNoha].Zvuk}`);
-
-var button = document.getElementById("Mluvidlo");
-button.addEventListener("click", function() {
-    audio.play();
-});
-
 const JolandinyMoudra = [ 
 {"Text": "Zamíchám na vás váš osud!", "Zvuk": "zamicham-na-vas-vas-osud.mp3"},
 {"Text": "A chci abyste viděli, jak sem zkušená.",  "Zvuk": "a-chci-abyste-videli-jak-sem-zkusena.mp3"},
@@ -63,6 +53,16 @@ const Poslani = [
 "Tady vidím velký špatný. Možná by bylo jako tvoje poslání lepší zametat ulice?",
 ]
 
+const MoudroJakNoha = Math.floor(Math.random() * JolandinyMoudra.length);
+document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha].Text;
+
+var audio = new Audio(`./jolandinypovidy/${JolandinyMoudra[MoudroJakNoha].Zvuk}`);
+
+var button = document.getElementById("Mluvidlo");
+button.addEventListener("click", function() {
+    audio.play();
+});
+
 
 // Function to append content once
 function appendOnce(karticka, predpoved) {
@@ -93,14 +93,8 @@ function appendOnce(karticka, predpoved) {
                 null,
                 false
             );
-            
-            // Specify the text you want to replace all content with
-            var replacementText = "Staň se veganem, Dubínku!";
-            
-            // Iterate through each text node and set its text content to the specified string
-            while(textNodes.nextNode()) {
-                textNodes.currentNode.textContent = replacementText;
-            }
+            var titleElement = document.getElementById("Moudro");
+            titleElement.textContent = "Staň se veganem, Dubínku!";
 
             audio = new Audio("./jolandinypovidy/stan-se-veganem-dubinku.mp3");
         }
