@@ -6,24 +6,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 const JolandinyMoudra = [ 
-"Zamíchám na vás váš osud!", 
-"A chci abyste viděli, jak sem zkušená.", 
-"Ano, mluvte do telefonu.",
-"Dneska opět žijeme!",
-"Haló?",
-"Dobrý večer",
-"Ha, jedeme!",
-"Hodně budeš někde.",
-"Chcete volat, nechcete volat? Volejte, nečekejte!",
-"I ten špatný člověk na každýho spadne.",
-"Lidi vždycky chodili odjakživa za kartářky.",
-"Moje jméno je Jolanda!",
-"Můžete položit jenom jednu a odpovím vám jenom tři!",
-"Nejsem nějaký medium.",
-"Nenechte se zmát!",
-"Tak jáj budoucnost!",
-"Vidim, slyšim a poslouchám!"
+{"Text": "Zamíchám na vás váš osud!", "Zvuk": "zamicham-na-vas-vas-osud.mp3"},
+{"Text": "A chci abyste viděli, jak sem zkušená.",  "Zvuk": "a-chci-abyste-videli-jak-sem-zkusena.mp3"},
+{"Text": "Ano, mluvte do telefonu.", "Zvuk": "ano-mluvte-do-telefonu.mp3"},
+{"Text": "Dneska opět žijeme!", "Zvuk": "dneska-opet-zijeme.mp3"},
+{"Text": "Haló?", "Zvuk": "halo.mp3"},
+{"Text": "Dobrý večer", "Zvuk": "dobry-vecer.mp3"},
+{"Text": "Ha, jedeme!", "Zvuk": "ha-jedeme.mp3"},
+{"Text": "Hodně budeš někde.", "Zvuk": "hodne-budes-nekde.mp3"},
+{"Text": "Chcete volat, nechcete volat? Volejte, nečekejte!", "Zvuk": "chcete-volat-nechcete-volat-volejte-necekejte.mp3"},
+{"Text": "I ten špatnej člověk na každýho spadne.", "Zvuk": "i-ten-spatnej-clovek-na-kazdyho-spadne.mp3"},
+{"Text": "Lidi vždycky chodili odjakživa za kartářky.", "Zvuk": "lidi-vzdicky-chodili-odjakziva-za-kartarky.mp3"}, 
+{"Text": "Moje jméno je Jolanda!", "Zvuk": "moje-jmeno-je-jolanda.mp3"},
+{"Text": "Můžete položit jenom jednu a odpovím vám jenom tři!", "Zvuk": "muzete-polozit-jenom-jednu-a-odpovim-vam-jenom-tri.mp3"},
+{"Text": "Nejsem nějaký medium.", "Zvuk": "nejsem-nejaky-medium.mp3"},
+{"Text": "Nenechte se zmát!", "Zvuk": "nenechte-se-zmat.mp3"},
+{"Text": "Tak jáj budoucnost!", "Zvuk": "tak-jaj-budoucnost.mp3"},
+{"Text": "Vidim, slyšim a poslouchám!", "Zvuk": "vidim-slysim-a-posloucham.mp3"},
 ]
+
+
 
 const Zivot = [
 "Tvůj život je jako záclona, zatažená za slunečných dnů. Musíš se přestat bránit okolnímu světu.",
@@ -109,11 +111,26 @@ document.getElementById("poslani").onclick = function() {
     appendOnce("poslani", "Predpoved3");
 };
 
+
+
+
+
+
+
+
+
+
+
+
 const MoudroJakNoha = Math.floor(Math.random() * JolandinyMoudra.length);
-document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha];
+document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha].Text;
 
+var audio = new Audio(`./jolandinypovidy/${JolandinyMoudra[MoudroJakNoha].Zvuk}`);
 
-
+var button = document.getElementById("Mluvidlo");
+button.addEventListener("click", function() {
+    audio.play();
+});
 
 
 
