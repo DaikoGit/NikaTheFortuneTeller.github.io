@@ -4,6 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
     container.classList.add("fade-in");
 });
 
+const MoudroJakNoha = Math.floor(Math.random() * JolandinyMoudra.length);
+document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha].Text;
+
+var audio = new Audio(`./jolandinypovidy/${JolandinyMoudra[MoudroJakNoha].Zvuk}`);
+
+var button = document.getElementById("Mluvidlo");
+button.addEventListener("click", function() {
+    audio.play();
+});
 
 const JolandinyMoudra = [ 
 {"Text": "Zamíchám na vás váš osud!", "Zvuk": "zamicham-na-vas-vas-osud.mp3"},
@@ -78,6 +87,22 @@ function appendOnce(karticka, predpoved) {
         newElement.textContent = Poslani[PredpovedJakNoha];
         if (Poslani[PredpovedJakNoha] == "Staň se veganem, Dubínku!") {
             document.getElementById("Vesta").src = "./obrazky/Vesticky/polish-cow.webp";
+            var textNodes = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+            
+            // Specify the text you want to replace all content with
+            var replacementText = "Staň se veganem, Dubínku!";
+            
+            // Iterate through each text node and set its text content to the specified string
+            while(textNodes.nextNode()) {
+                textNodes.currentNode.textContent = replacementText;
+            }
+
+            audio = new Audio("./jolandinypovidy/stan-se-veganem-dubinku.mp3");
         }
     }
 
@@ -110,31 +135,6 @@ document.getElementById("laska").onclick = function() {
 document.getElementById("poslani").onclick = function() {
     appendOnce("poslani", "Predpoved3");
 };
-
-
-
-
-
-
-
-
-
-
-
-
-const MoudroJakNoha = Math.floor(Math.random() * JolandinyMoudra.length);
-document.getElementById("Moudro").innerHTML = JolandinyMoudra[MoudroJakNoha].Text;
-
-var audio = new Audio(`./jolandinypovidy/${JolandinyMoudra[MoudroJakNoha].Zvuk}`);
-
-var button = document.getElementById("Mluvidlo");
-button.addEventListener("click", function() {
-    audio.play();
-});
-
-
-
-
 
 
 // Array of image file names (assuming they are in the ./obrazky/Pozadi/ directory)
